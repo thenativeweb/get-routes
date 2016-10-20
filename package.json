@@ -1,0 +1,34 @@
+{
+  "name": "get-routes",
+  "version": "0.0.0",
+  "description": "get-routes gets all routes from an Express application.",
+  "contributors": [
+    {
+      "name": "Golo Roden",
+      "email": "golo.roden@thenativeweb.io"
+    },
+    {
+      "name": "Matthias Wagler",
+      "email": "matthias.wagler@thenativeweb.io"
+    }
+  ],
+  "main": "lib/getRoutes.js",
+  "dependencies": {
+    "lodash": "4.16.3"
+  },
+  "devDependencies": {
+    "assertthat": "0.8.0",
+    "express": "4.14.0",
+    "roboter": "0.13.5",
+    "roboter-server": "0.13.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thenativeweb/get-routes.git"
+  },
+  "keywords": [
+    "express",
+    "routes"
+  ],
+  "license": "MIT"
+}
