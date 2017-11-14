@@ -1,6 +1,6 @@
 # get-routes
 
-get-routes gets all routes from an Express application.
+get-routes gets all routes from an Express or Sails.js application.
 
 ## Installation
 
@@ -39,6 +39,14 @@ To build this module use [roboter](https://www.npmjs.com/package/roboter).
 
 ```bash
 $ bot
+```
+
+## Running the test
+
+to test this module run
+
+```bash
+$ npm test
 ```
 
 ## License

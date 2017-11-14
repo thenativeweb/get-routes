@@ -1,5 +1,6 @@
 # Node.js folders
 *coverage/
+.nyc_output/
 *node_modules/
 
 # Build artefacts
@@ -8,3 +9,6 @@
 # OS generated files and folders
 .DS_Store
 npm-debug.log
+
+#vs-code
+.vscode/
