@@ -1,16 +1,17 @@
 # Node.js folders
 *coverage/
-.nyc_output/
 *node_modules/
+npm-debug.log
 
 # Build artefacts
 *build/
 
 # OS generated files and folders
 .DS_Store
-npm-debug.log
 
-#vs-code
+
+#Virtual Studio Code
 .vscode/
-#intellij
+
+#Intellij Idea products
 .idea/

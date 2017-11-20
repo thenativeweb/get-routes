@@ -1,6 +1,6 @@
 {
   "name": "get-routes",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "get-routes gets all routes from an Express application.",
   "contributors": [
     {
@@ -13,7 +13,7 @@
     },
     {
       "name": "Amin Aghabeiki",
-      "email": "amin.aghabeiki[at]gmail[dot]com"
+      "email": "amin.aghabeiki@gmail.com"
     }
   ],
   "main": "lib/getRoutes.js",
@@ -24,7 +24,9 @@
     "assertthat": "0.8.0",
     "express": "4.14.0",
     "roboter": "0.13.5",
-    "roboter-server": "0.13.5"
+    "roboter-server": "0.13.5",
+    "sails": "^0.12.14",
+    "sails-memory": "^0.10.7"
   },
   "repository": {
     "type": "git",

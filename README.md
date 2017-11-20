@@ -41,14 +41,6 @@ To build this module use [roboter](https://www.npmjs.com/package/roboter).
 $ bot
 ```
 
-## Running the test
-
-to test this module run
-
-```bash
-$ npm test
-```
-
 ## License
 
 The MIT License (MIT)

@@ -1,31 +1,26 @@
-/* eslint-disable no-empty-function,no-console */
-
 'use strict';
 
 const assert = require('assertthat');
-
+const sails = require('sails');
 const getRoutes = require('../../lib/getRoutes');
+const config = require('../resource/sailsTestConfig');
 
-suite('getRoutes\t Sails.js', () => {
-  let app;
+suite('getRoutes Sails.js', () => {
+  before(function (done) {
+        // Increase the Mocha timeout so that Sails has enough time to lift.
+    this.timeout(5000);
+    process.NODE_ENV = 'test';
+    sails.lift(config, err => {
+      if (err) {
+        return done(err);
+      }
+      done();
+    });
+  });
 
-  setup(() => {
-    const Sails = function () {
-      this.config = {
-        routes: {
-          '/': {},
-          'get /articles': {
-            view: 'somewhere'
-          },
-          'post /articles/:id': {
-            controller: 'something'
-          }
-
-        }
-      };
-    };
-
-    app = new Sails();
+  after(done => {
+        // here you can clear fixtures, etc.
+    sails.lower(done);
   });
 
   test('is a function.', done => {
@@ -41,24 +36,27 @@ suite('getRoutes\t Sails.js', () => {
   });
 
   test('returns a list of routes.', done => {
-    const routes = getRoutes(app);
+    const routes = getRoutes(sails);
 
     assert.that(routes).is.equalTo({
       get: [
-        '/',
-        '/articles'
+        '/csrfToken',
+        '/'
       ],
       delete: [
+        '/csrfToken',
         '/'
       ],
       patch: [
+        '/csrfToken',
         '/'
       ],
       post: [
-        '/',
-        '/articles/:id'
+        '/csrfToken',
+        '/'
       ],
       put: [
+        '/csrfToken',
         '/'
       ]
     });
