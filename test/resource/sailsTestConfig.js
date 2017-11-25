@@ -17,12 +17,9 @@ module.exports = {
     '/': (req, res) => {
       res.send('ok');
     }
-
   },
   http: {
-
     middleware: {
-
       order: [
         'cookieParser',
         'session',

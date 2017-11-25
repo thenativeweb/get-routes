@@ -6,7 +6,7 @@ const getRoutes = require('../../lib/getRoutes');
 const config = require('../resource/sailsTestConfig');
 
 suite('getRoutes Sails.js', () => {
-  before(function (done) {
+  suiteSetup(function (done) {
         // Increase the Mocha timeout so that Sails has enough time to lift.
     this.timeout(5000);
     process.NODE_ENV = 'test';
@@ -18,7 +18,7 @@ suite('getRoutes Sails.js', () => {
     });
   });
 
-  after(done => {
+  suiteTeardown(done => {
         // here you can clear fixtures, etc.
     sails.lower(done);
   });
@@ -43,7 +43,11 @@ suite('getRoutes Sails.js', () => {
         '/csrfToken',
         '/'
       ],
-      delete: [
+      post: [
+        '/csrfToken',
+        '/'
+      ],
+      put: [
         '/csrfToken',
         '/'
       ],
@@ -51,11 +55,7 @@ suite('getRoutes Sails.js', () => {
         '/csrfToken',
         '/'
       ],
-      post: [
-        '/csrfToken',
-        '/'
-      ],
-      put: [
+      delete: [
         '/csrfToken',
         '/'
       ]

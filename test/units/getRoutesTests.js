@@ -47,7 +47,10 @@ suite('getRoutes', () => {
       ],
       post: [
         '/articles/:id'
-      ]
+      ],
+      put: [],
+      patch: [],
+      delete: []
     });
     done();
   });

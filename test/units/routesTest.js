@@ -12,17 +12,32 @@ suite('routes', () => {
   });
   test('should create route and export it correctly', done => {
     routes.addToAllMethod('/allMethodCheck');
-    routes.addToGetMethodList('/checkGet');
-    routes.addToPostMethodList('/checkPost');
-    routes.addToPutMethodList('/checkPut');
-    routes.addToDeleteMethodList('/checkDelete');
-    routes.addToPatchMethodList('/checkPatch');
-    assert.that(routes.export()).is.equalTo({
-      get: [ '/allMethodCheck', '/checkGet' ],
-      post: [ '/allMethodCheck', '/checkPost' ],
-      put: [ '/allMethodCheck', '/checkPut' ],
-      delete: [ '/allMethodCheck', '/checkDelete' ],
-      patch: [ '/allMethodCheck', '/checkPatch' ]
+    routes.addTo('get', '/checkGet');
+    routes.addTo('post', '/checkPost');
+    routes.addTo('put', '/checkPut');
+    routes.addTo('delete', '/checkDelete');
+    routes.addTo('patch', '/checkPatch');
+    assert.that(routes.routes).is.equalTo({
+      get: [
+        '/allMethodCheck',
+        '/checkGet'
+      ],
+      post: [
+        '/allMethodCheck',
+        '/checkPost'
+      ],
+      put: [
+        '/allMethodCheck',
+        '/checkPut'
+      ],
+      patch: [
+        '/allMethodCheck',
+        '/checkPatch'
+      ],
+      delete: [
+        '/allMethodCheck',
+        '/checkDelete'
+      ]
     });
 
     done();
@@ -42,7 +57,7 @@ suite('routes', () => {
         routes.processEndpoint(method, path);
       });
     });
-    assert.that(routes.export()).is.equalTo(endpointConfig);
+    assert.that(routes.routes).is.equalTo(endpointConfig);
     done();
   });
 });
