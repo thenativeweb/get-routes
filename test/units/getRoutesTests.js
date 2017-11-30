@@ -3,22 +3,33 @@
 const assert = require('assertthat'),
       express = require('express');
 
-const getRoutes = require('../../lib/getRoutes');
+let getRoutes;
 
 suite('getRoutes', () => {
   let app;
 
   setup(() => {
+      /* eslint-disable prefer-reflect */
+    delete require.cache[require.resolve('../../lib/Routes')];
+      /* eslint-enable prefer-reflect */
+        /* eslint-disable global-require */
+    getRoutes = require('../../lib/getRoutes');
+        /* eslint-enable global-require */
+
     app = express();
 
     app.get('/articles', () => {
-      // Intentionally left blank.
+            // Intentionally left blank.
     });
     app.post('/articles/:id', () => {
-      // Intentionally left blank.
+            // Intentionally left blank.
     });
   });
-
+  teardown(() => {
+        /* eslint-disable prefer-reflect */
+    delete require.cache[require.resolve('../../lib/getRoutes')];
+        /* eslint-enable prefer-reflect */
+  });
   test('is a function.', done => {
     assert.that(getRoutes).is.ofType('function');
     done();

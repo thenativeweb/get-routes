@@ -1,14 +1,20 @@
 'use strict';
 
 const assert = require('assertthat');
-const Routes = require('../../lib/Routes');
 
 suite('routes', () => {
   let routes = null;
 
   setup(() => {
     routes = null;
-    routes = new Routes();
+        /* eslint-disable global-require */
+    routes = require('../../lib/Routes');
+        /* eslint-disable global-require */
+  });
+  teardown(() => {
+        /* eslint-disable prefer-reflect */
+    delete require.cache[require.resolve('../../lib/Routes')];
+        /* eslint-enable prefer-reflect */
   });
   test('should create route and export it correctly', done => {
     routes.addToAllMethod('/allMethodCheck');
@@ -39,7 +45,6 @@ suite('routes', () => {
         '/checkDelete'
       ]
     });
-
     done();
   });
 

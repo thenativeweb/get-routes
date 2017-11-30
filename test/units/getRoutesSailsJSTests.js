@@ -2,7 +2,7 @@
 
 const assert = require('assertthat');
 const sails = require('sails');
-const getRoutes = require('../../lib/getRoutes');
+let getRoutes;
 const config = require('../resource/sailsTestConfig');
 
 suite('getRoutes Sails.js', () => {
@@ -18,6 +18,19 @@ suite('getRoutes Sails.js', () => {
     });
   });
 
+  setup(() => {
+      /* eslint-disable prefer-reflect */
+    delete require.cache[require.resolve('../../lib/Routes')];
+      /* eslint-enable prefer-reflect */
+      /* eslint-disable global-require */
+    getRoutes = require('../../lib/getRoutes');
+      /* eslint-enable global-require */
+  });
+  teardown(() => {
+        /* eslint-disable prefer-reflect */
+    delete require.cache[require.resolve('../../lib/getRoutes')];
+        /* eslint-enable prefer-reflect */
+  });
   suiteTeardown(done => {
         // here you can clear fixtures, etc.
     sails.lower(done);
