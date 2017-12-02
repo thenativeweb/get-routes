@@ -9,8 +9,8 @@ npm-debug.log
 # OS generated files and folders
 .DS_Store
 
-#Visual Studio Code
+# Visual Studio Code
 .vscode/
 
-#Intellij Idea products
+# IntelliJ Idea
 .idea/
