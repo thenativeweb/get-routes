@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+const sailsConfiguration = {
   log: {
     level: 'silent'
   },
@@ -38,3 +38,4 @@ module.exports = {
   }
 };
 
+module.exports = sailsConfiguration;
