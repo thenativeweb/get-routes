@@ -1,10 +1,16 @@
 # Node.js folders
 *coverage/
 *node_modules/
+npm-debug.log
 
 # Build artefacts
 *build/
 
 # OS generated files and folders
 .DS_Store
-npm-debug.log
+
+#Visual Studio Code
+.vscode/
+
+#Intellij Idea products
+.idea/

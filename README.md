@@ -1,6 +1,6 @@
 # get-routes
 
-get-routes gets all routes from an Express application.
+get-routes gets all routes from an Express or Sails.js application.
 
 ## Installation
 
