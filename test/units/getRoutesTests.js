@@ -1,35 +1,13 @@
 'use strict';
 
 const assert = require('assertthat'),
-      express = require('express');
+      express = require('express'),
+      sails = require('sails');
 
-let getRoutes;
+const getRoutes = require('../../lib/getRoutes'),
+      sailsConfiguration = require('../helpers/sailsConfiguration');
 
 suite('getRoutes', () => {
-  let app;
-
-  setup(() => {
-      /* eslint-disable prefer-reflect */
-    delete require.cache[require.resolve('../../lib/Routes')];
-      /* eslint-enable prefer-reflect */
-        /* eslint-disable global-require */
-    getRoutes = require('../../lib/getRoutes');
-        /* eslint-enable global-require */
-
-    app = express();
-
-    app.get('/articles', () => {
-            // Intentionally left blank.
-    });
-    app.post('/articles/:id', () => {
-            // Intentionally left blank.
-    });
-  });
-  teardown(() => {
-        /* eslint-disable prefer-reflect */
-    delete require.cache[require.resolve('../../lib/getRoutes')];
-        /* eslint-enable prefer-reflect */
-  });
   test('is a function.', done => {
     assert.that(getRoutes).is.ofType('function');
     done();
@@ -45,24 +23,60 @@ suite('getRoutes', () => {
   test('throws an error if app is not supported.', done => {
     assert.that(() => {
       getRoutes({});
-    }).is.throwing('App is not supported.');
+    }).is.throwing('Invalid application type.');
     done();
   });
 
-  test('returns a list of routes.', done => {
-    const routes = getRoutes(app);
+  suite('for Express apps', () => {
+    test('returns a list of routes.', done => {
+      const app = express();
 
-    assert.that(routes).is.equalTo({
-      get: [
-        '/articles'
-      ],
-      post: [
-        '/articles/:id'
-      ],
-      put: [],
-      patch: [],
-      delete: []
+      app.get('/articles', () => {
+        // Intentionally left blank.
+      });
+      app.post('/articles/:id', () => {
+        // Intentionally left blank.
+      });
+
+      const routes = getRoutes(app);
+
+      assert.that(routes).is.equalTo({
+        get: [ '/articles' ],
+        post: [ '/articles/:id' ],
+        put: [],
+        patch: [],
+        delete: []
+      });
+
+      done();
     });
-    done();
+  });
+
+  suite('for Sails.js apps', () => {
+    test('returns a list of routes.', done => {
+      sails.lift(sailsConfiguration, err => {
+        if (err) {
+          return done(err);
+        }
+
+        const routes = getRoutes(sails);
+
+        assert.that(routes).is.equalTo({
+          get: [ '/csrfToken', '/' ],
+          post: [ '/csrfToken', '/' ],
+          put: [ '/csrfToken', '/' ],
+          patch: [ '/csrfToken', '/' ],
+          delete: [ '/csrfToken', '/' ]
+        });
+
+        sails.lower(errSails => {
+          if (errSails) {
+            return done(errSails);
+          }
+
+          done();
+        });
+      });
+    });
   });
 });
