@@ -16,13 +16,18 @@
       "email": "amin.aghabeiki@gmail.com"
     }
   ],
+  "scripts": {
+    "docs": "jsdoc -R ./README.md  -r -a all --private -t node_modules/docdash  ./lib  -d docs/"
+  },
   "main": "dist/getRoutes.js",
   "dependencies": {
     "lodash": "4.17.4"
   },
   "devDependencies": {
     "assertthat": "0.11.0",
+    "docdash": "^0.4.0",
     "express": "4.16.2",
+    "jsdoc": "3.5.5",
     "roboter": "0.15.4",
     "roboter-server": "0.15.4",
     "sails": "0.12.14"

@@ -4,6 +4,11 @@ const sailsConfiguration = {
   log: {
     level: 'silent'
   },
+  hooks: {
+    cron: false,
+    view: false,
+    grunt: false
+  },
   models: {
     connection: 'test',
     migrate: 'drop'

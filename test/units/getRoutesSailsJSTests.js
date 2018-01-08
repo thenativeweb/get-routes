@@ -1,15 +1,17 @@
 'use strict';
 
 const assert = require('assertthat');
-const sails = require('sails');
+const Sails = require('sails').Sails;
 let getRoutes;
 const config = require('../resource/sailsTestConfig');
+let sails = null;
 
 suite('getRoutes Sails.js', () => {
   suiteSetup(function (done) {
         // Increase the Mocha timeout so that Sails has enough time to lift.
     this.timeout(5000);
     process.NODE_ENV = 'test';
+    sails = new Sails();
     sails.lift(config, err => {
       if (err) {
         return done(err);

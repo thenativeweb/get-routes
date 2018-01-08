@@ -59,7 +59,7 @@ suite('routes', () => {
 
     Object.keys(endpointConfig).forEach(method => {
       endpointConfig[method].forEach(path => {
-        routes.processEndpoint(method, path);
+        routes.addTo(method, path);
       });
     });
     assert.that(routes.routes).is.equalTo(endpointConfig);
