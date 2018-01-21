@@ -16,6 +16,9 @@
       "email": "amin.aghabeiki@gmail.com"
     }
   ],
+  "scripts": {
+    "docs": "jsdoc -R ./README.md  -r -a all --private -t node_modules/docdash  ./lib  -d docs/"
+  },
   "main": "dist/getRoutes.js",
   "dependencies": {
     "lodash": "4.17.4"

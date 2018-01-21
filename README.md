@@ -32,6 +32,20 @@ console.log(routes);
 //      ...
 //    }
 ```
+## Module options
+
+To pass config to `get-routes` module, send your config JSON options as second parameter to constractor.
+`getRoutes(app,options)`
+
+### format
+This module support `regex`  and `human-readable` URL parsing format.
+* The default parsing format is `human-readable`
+
+usage:
+const routes = getRoutes(app, { format: 'regex' });
+// => Regex
+const routes = getRoutes(app, { format: 'human-readable' });
+// => Human-readable  
 
 ## Running the build
 

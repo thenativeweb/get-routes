@@ -1,13 +1,8 @@
 'use strict';
 
-const sailsConfiguration = {
+module.exports = {
   log: {
     level: 'silent'
-  },
-  hooks: {
-    cron: false,
-    view: false,
-    grunt: false
   },
   models: {
     connection: 'test',
@@ -43,4 +38,3 @@ const sailsConfiguration = {
   }
 };
 
-module.exports = sailsConfiguration;
