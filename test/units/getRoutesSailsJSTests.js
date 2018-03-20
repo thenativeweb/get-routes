@@ -21,9 +21,6 @@ suite('getRoutes Sails.js', () => {
   });
 
   setup(() => {
-      /* eslint-disable prefer-reflect */
-    delete require.cache[require.resolve('../../lib/Routes')];
-      /* eslint-enable prefer-reflect */
       /* eslint-disable global-require */
     getRoutes = require('../../lib/getRoutes');
       /* eslint-enable global-require */
