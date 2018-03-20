@@ -2,7 +2,7 @@
 
 const assert = require('assertthat'),
       express = require('express'),
-      sails = require('sails');
+      Sails = require('sails').Sails;
 
 const getRoutes = require('../../lib/getRoutes'),
       sailsConfiguration = require('../helpers/sailsConfiguration');
@@ -17,6 +17,29 @@ suite('getRoutes', () => {
     assert.that(() => {
       getRoutes();
     }).is.throwing('App is missing.');
+    done();
+  });
+
+  test('throws an error if invalid config pass to constractor', done => {
+    const app = express();
+
+    app.get('/articles', () => {
+          // Intentionally left blank.
+    });
+    assert.that(() => {
+      getRoutes(app, { invalidConfig: true });
+    }).is.throwing('Invalid Option pass to the get-routes constractor. the invalid key: \'invalidConfig\'.');
+    done();
+  });
+  test('throws an error if invalid URL format config pass in config', done => {
+    const app = express();
+
+    app.get('/articles', () => {
+            // Intentionally left blank.
+    });
+    assert.that(() => {
+      getRoutes(app, { format: 'invalid format' });
+    }).is.throwing('Invalid URL parsing format selected.supported format: \'human-readable\', \'regex\'.');
     done();
   });
 
@@ -54,6 +77,8 @@ suite('getRoutes', () => {
 
   suite('for Sails.js apps', () => {
     test('returns a list of routes.', done => {
+      const sails = new Sails();
+
       sails.lift(sailsConfiguration, err => {
         if (err) {
           return done(err);
