@@ -4,7 +4,7 @@ const assert = require('assertthat'),
       express = require('express'),
       sails = require('sails');
 
-const getRoutes = require('../../lib/getRoutes'),
+const getRoutes = require('../../src/getRoutes'),
       sailsConfiguration = require('../helpers/sailsConfiguration');
 
 suite('getRoutes', () => {
