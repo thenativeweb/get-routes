@@ -32,7 +32,7 @@ If you use TypeScript, use the following code instead:
 import getRoutes from 'get-routes';
 ```
 
-Then, call `getRoutes` with an Express app to get a list of all registered routes.
+Then, call the `getRoutes` function with an Express app to get a list of all registered routes:
 
 ```javascript
 const routes = getRoutes(app);
