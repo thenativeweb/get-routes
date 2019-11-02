@@ -16,15 +16,17 @@
       "email": "amin.aghabeiki@gmail.com"
     }
   ],
-  "main": "dist/getRoutes.js",
+  "main": "build/lib/getRoutes.js",
+  "types": "build/lib/getRoutes.d.ts",
   "dependencies": {
-    "lodash": "4.17.11"
+    "lodash": "4.17.15"
   },
   "devDependencies": {
-    "assertthat": "2.0.1",
-    "express": "4.16.4",
-    "roboter": "3.0.4",
-    "sails": "0.12.14"
+    "@types/express": "4.17.2",
+    "@types/lodash": "4.14.144",
+    "assertthat": "4.0.2",
+    "express": "4.17.1",
+    "roboter": "9.0.6"
   },
   "repository": {
     "type": "git",
@@ -32,8 +34,7 @@
   },
   "keywords": [
     "routes",
-    "express",
-    "sails.js"
+    "express"
   ],
   "license": "MIT"
 }
