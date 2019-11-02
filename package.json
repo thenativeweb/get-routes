@@ -26,7 +26,7 @@
     "@types/lodash": "4.14.144",
     "assertthat": "4.0.2",
     "express": "4.17.1",
-    "roboter": "9.0.6"
+    "roboter": "9.0.7"
   },
   "repository": {
     "type": "git",
