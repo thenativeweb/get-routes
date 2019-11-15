@@ -23,13 +23,13 @@ $ npm install get-routes
 First you need to add a reference to get-routes to your application:
 
 ```javascript
-const getRoutes = require('get-routes').default;
+const { getRoutes } = require('get-routes');
 ```
 
 If you use TypeScript, use the following code instead:
 
 ```typescript
-import getRoutes from 'get-routes';
+import { getRoutes } from 'get-routes';
 ```
 
 Then, call the `getRoutes` function with an Express app to get a list of all registered routes:

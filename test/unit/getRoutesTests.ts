@@ -1,6 +1,6 @@
-import assert from 'assertthat';
+import { assert } from 'assertthat';
 import express from 'express';
-import getRoutes from '../../lib/getRoutes';
+import { getRoutes } from '../../lib/getRoutes';
 
 suite('getRoutes', (): void => {
   test('returns a list of routes.', async (): Promise<void> => {

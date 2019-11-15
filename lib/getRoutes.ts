@@ -45,4 +45,4 @@ const getRoutes = function (app: Application): Routes {
   return routes;
 };
 
-export default getRoutes;
+export { getRoutes };
