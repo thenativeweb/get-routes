@@ -27,7 +27,7 @@
     "assertthat": "5.1.0",
     "express": "4.17.1",
     "roboter": "10.1.18",
-    "semantic-release-configuration": "1.0.8"
+    "semantic-release-configuration": "1.0.9"
   },
   "repository": {
     "type": "git",
