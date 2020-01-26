@@ -26,7 +26,7 @@
     "@types/lodash": "4.14.149",
     "assertthat": "5.1.0",
     "express": "4.17.1",
-    "roboter": "11.0.4",
+    "roboter": "11.0.5",
     "semantic-release-configuration": "1.0.11"
   },
   "repository": {
