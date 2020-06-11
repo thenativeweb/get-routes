@@ -19,14 +19,14 @@
   "main": "build/lib/getRoutes.js",
   "types": "build/lib/getRoutes.d.ts",
   "dependencies": {
+    "@types/lodash": "4.14.155",
     "lodash": "4.17.15"
   },
   "devDependencies": {
     "@types/express": "4.17.6",
-    "@types/lodash": "4.14.155",
     "assertthat": "5.1.1",
     "express": "4.17.1",
-    "roboter": "11.1.26",
+    "roboter": "11.2.0",
     "semantic-release-configuration": "1.0.20"
   },
   "repository": {
