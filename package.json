@@ -1,6 +1,6 @@
 {
   "name": "get-routes",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "get-routes gets all routes from an Express application.",
   "contributors": [
     {

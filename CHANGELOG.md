@@ -1,3 +1,10 @@
+## [2.0.12](https://github.com/thenativeweb/get-routes/compare/2.0.11...2.0.12) (2020-11-03)
+
+
+### Bug Fixes
+
+* Fix headline for robot section in readme. ([#200](https://github.com/thenativeweb/get-routes/issues/200)) ([da64900](https://github.com/thenativeweb/get-routes/commit/da649008016a0c3cbeb6106f0886aa1e82a6c0c3))
+
 ## [2.0.11](https://github.com/thenativeweb/get-routes/compare/2.0.10...2.0.11) (2020-10-30)
 
 
