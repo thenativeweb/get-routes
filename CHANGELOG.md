@@ -1,3 +1,10 @@
+## [2.0.13](https://github.com/thenativeweb/get-routes/compare/2.0.12...2.0.13) (2020-11-05)
+
+
+### Bug Fixes
+
+* bump @types/lodash from 4.14.164 to 4.14.165 ([#212](https://github.com/thenativeweb/get-routes/issues/212)) ([384ca58](https://github.com/thenativeweb/get-routes/commit/384ca58eccb170db68d7bd376204e5b61b4f6102))
+
 ## [2.0.12](https://github.com/thenativeweb/get-routes/compare/2.0.11...2.0.12) (2020-11-03)
 
 
