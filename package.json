@@ -19,7 +19,7 @@
   "main": "build/lib/getRoutes.js",
   "types": "build/lib/getRoutes.d.ts",
   "dependencies": {
-    "@types/lodash": "4.14.164",
+    "@types/lodash": "4.14.165",
     "lodash": "4.17.20"
   },
   "devDependencies": {
