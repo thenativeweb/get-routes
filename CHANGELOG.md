@@ -1,3 +1,10 @@
+## [2.0.18](https://github.com/thenativeweb/get-routes/compare/2.0.17...2.0.18) (2021-03-25)
+
+
+### Bug Fixes
+
+* Migrate from master to main. ([#290](https://github.com/thenativeweb/get-routes/issues/290)) ([fe683de](https://github.com/thenativeweb/get-routes/commit/fe683ded2826d54664724a81622295cf72158296))
+
 ## [2.0.17](https://github.com/thenativeweb/get-routes/compare/2.0.16...2.0.17) (2021-02-22)
 
 
