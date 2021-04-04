@@ -11,9 +11,11 @@ const getRoutes = function (app: Application): Routes {
     delete: []
   };
 
-  /* eslint-disable no-underscore-dangle */
-  forOwn(app._router.stack, (middleware): void => {
-    /* eslint-enable no-underscore-dangle */
+  const processMiddleware = (middleware: any): void => {
+    if (middleware.name === 'router' && middleware.handle.stack) {
+      forOwn(middleware.handle.stack, processMiddleware);
+    }
+
     if (!middleware.route) {
       return;
     }
@@ -40,7 +42,10 @@ const getRoutes = function (app: Application): Routes {
       default:
         throw new Error(`Invalid method ${method}.`);
     }
-  });
+  };
+
+  // eslint-disable-next-line no-underscore-dangle
+  forOwn(app._router.stack, processMiddleware);
 
   return routes;
 };

@@ -23,4 +23,28 @@ suite('getRoutes', (): void => {
       delete: []
     });
   });
+  test('returns a list of routes for nested routers.', async (): Promise<void> => {
+    const app = express();
+
+    // eslint-disable-next-line new-cap
+    const router = express.Router();
+
+    router.get('/articles', (): void => {
+      // Intentionally left blank.
+    });
+    router.post('/articles/:id', (): void => {
+      // Intentionally left blank.
+    });
+    app.use(router);
+
+    const routes = getRoutes(app);
+
+    assert.that(routes).is.equalTo({
+      get: [ '/articles' ],
+      post: [ '/articles/:id' ],
+      put: [],
+      patch: [],
+      delete: []
+    });
+  });
 });
