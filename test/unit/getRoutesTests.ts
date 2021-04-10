@@ -47,4 +47,28 @@ suite('getRoutes', (): void => {
       delete: []
     });
   });
+  test('returns a list of routes for prefixed nested routers.', async (): Promise<void> => {
+    const app = express();
+
+    // eslint-disable-next-line new-cap
+    const router = express.Router();
+
+    router.get('/articles', (): void => {
+      // Intentionally left blank.
+    });
+    router.post('/articles/:id', (): void => {
+      // Intentionally left blank.
+    });
+    app.use('/api', router);
+
+    const routes = getRoutes(app);
+
+    assert.that(routes).is.equalTo({
+      get: [ '/api/articles' ],
+      post: [ '/api/articles/:id' ],
+      put: [],
+      patch: [],
+      delete: []
+    });
+  });
 });
