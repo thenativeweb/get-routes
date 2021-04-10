@@ -23,6 +23,7 @@ suite('getRoutes', (): void => {
       delete: []
     });
   });
+
   test('returns a list of routes for nested routers.', async (): Promise<void> => {
     const app = express();
 
