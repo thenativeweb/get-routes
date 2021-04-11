@@ -1,6 +1,26 @@
 import { Application } from 'express';
-import { forOwn } from 'lodash';
 import { Routes } from './Routes';
+
+// Disable naming convention because fast_slash comes from Express.
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const regexPrefixToString = (path: { fast_slash: any; toString: () => string }): string => {
+  if (path.fast_slash) {
+    return '';
+  }
+
+  // eslint-disable-next-line prefer-named-capture-group
+  const match = /^\/\^((?:\\[$()*+./?[\\\]^{|}]|[^$()*+./?[\\\]^{|}])*)\$\//u.exec(
+    path.toString().replace('\\/?', '').replace('(?=\\/|$)', '$')
+  );
+
+  if (match) {
+    // Unescape characters.
+    // eslint-disable-next-line prefer-named-capture-group
+    return match[1].replace(/\\(.)/gu, '$1');
+  }
+
+  return '[Unknown path]';
+};
 
 const getRoutes = function (app: Application): Routes {
   const routes: Routes = {
@@ -11,9 +31,13 @@ const getRoutes = function (app: Application): Routes {
     delete: []
   };
 
-  /* eslint-disable no-underscore-dangle */
-  forOwn(app._router.stack, (middleware): void => {
-    /* eslint-enable no-underscore-dangle */
+  const processMiddleware = (middleware: any, prefix = ''): void => {
+    if (middleware.name === 'router' && middleware.handle.stack) {
+      for (const subMiddleware of middleware.handle.stack) {
+        processMiddleware(subMiddleware, `${prefix}${regexPrefixToString(middleware.regexp)}`);
+      }
+    }
+
     if (!middleware.route) {
       return;
     }
@@ -23,24 +47,29 @@ const getRoutes = function (app: Application): Routes {
 
     switch (method) {
       case 'get':
-        routes.get.push(path);
+        routes.get.push(`${prefix}${path}`);
         break;
       case 'post':
-        routes.post.push(path);
+        routes.post.push(`${prefix}${path}`);
         break;
       case 'put':
-        routes.put.push(path);
+        routes.put.push(`${prefix}${path}`);
         break;
       case 'patch':
-        routes.patch.push(path);
+        routes.patch.push(`${prefix}${path}`);
         break;
       case 'delete':
-        routes.delete.push(path);
+        routes.delete.push(`${prefix}${path}`);
         break;
       default:
         throw new Error(`Invalid method ${method}.`);
     }
-  });
+  };
+
+  // eslint-disable-next-line no-underscore-dangle
+  for (const middleware of app._router.stack) {
+    processMiddleware(middleware);
+  }
 
   return routes;
 };
