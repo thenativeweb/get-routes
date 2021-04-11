@@ -7,7 +7,7 @@ const regexPrefixToString = (path: { fast_slash: any; toString: () => string }):
   if (path.fast_slash) {
     return '';
   }
-  
+
   // eslint-disable-next-line prefer-named-capture-group
   const match = /^\/\^((?:\\[$()*+./?[\\\]^{|}]|[^$()*+./?[\\\]^{|}])*)\$\//u.exec(
     path.toString().replace('\\/?', '').replace('(?=\\/|$)', '$')
