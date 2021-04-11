@@ -1,18 +1,21 @@
 import { Application } from 'express';
 import { Routes } from './Routes';
 
-// Disable naming convention because fast_slash comes from express
+// Disable naming convention because fast_slash comes from Express.
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const regexPrefixToString = (path: { fast_slash: any; toString: () => string }): string => {
   if (path.fast_slash) {
     return '';
   }
+  
+  // eslint-disable-next-line prefer-named-capture-group
   const match = /^\/\^((?:\\[$()*+./?[\\\]^{|}]|[^$()*+./?[\\\]^{|}])*)\$\//u.exec(
     path.toString().replace('\\/?', '').replace('(?=\\/|$)', '$')
   );
 
   if (match) {
-    // Unescape characters
+    // Unescape characters.
+    // eslint-disable-next-line prefer-named-capture-group
     return match[1].replace(/\\(.)/gu, '$1');
   }
 
