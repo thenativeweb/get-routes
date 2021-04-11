@@ -48,6 +48,7 @@ suite('getRoutes', (): void => {
       delete: []
     });
   });
+
   test('returns a list of routes for prefixed nested routers.', async (): Promise<void> => {
     const app = express();
 
