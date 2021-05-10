@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/thenativeweb/get-routes/compare/2.1.0...2.1.1) (2021-05-10)
+
+
+### Bug Fixes
+
+* bump hosted-git-info from 2.8.8 to 2.8.9 ([#308](https://github.com/thenativeweb/get-routes/issues/308)) ([86e79b0](https://github.com/thenativeweb/get-routes/commit/86e79b0479f6620911a4d27a843eeb69a179b52f))
+
 # [2.1.0](https://github.com/thenativeweb/get-routes/compare/2.0.18...2.1.0) (2021-04-11)
 
 
