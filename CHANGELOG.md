@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/thenativeweb/get-routes/compare/2.1.2...2.1.3) (2021-06-08)
+
+
+### Bug Fixes
+
+* bump trim-newlines from 3.0.0 to 3.0.1 ([#321](https://github.com/thenativeweb/get-routes/issues/321)) ([4ca57eb](https://github.com/thenativeweb/get-routes/commit/4ca57eb15840f9c7e47ebb3619e7ec6b14b3313d))
+
 ## [2.1.2](https://github.com/thenativeweb/get-routes/compare/2.1.1...2.1.2) (2021-06-08)
 
 
