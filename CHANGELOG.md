@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/thenativeweb/get-routes/compare/2.1.1...2.1.2) (2021-06-08)
+
+
+### Bug Fixes
+
+* bump glob-parent from 5.1.1 to 5.1.2 ([#322](https://github.com/thenativeweb/get-routes/issues/322)) ([9444779](https://github.com/thenativeweb/get-routes/commit/94447796845954bb6e2a98152b6d3d951845ec3a))
+
 ## [2.1.1](https://github.com/thenativeweb/get-routes/compare/2.1.0...2.1.1) (2021-05-10)
 
 
