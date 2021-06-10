@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/thenativeweb/get-routes/compare/2.1.3...2.1.4) (2021-06-10)
+
+
+### Bug Fixes
+
+* bump normalize-url from 6.0.0 to 6.0.1 ([#323](https://github.com/thenativeweb/get-routes/issues/323)) ([b054b40](https://github.com/thenativeweb/get-routes/commit/b054b40316804a9e86ef8fe9e7347c5671022548))
+
 ## [2.1.3](https://github.com/thenativeweb/get-routes/compare/2.1.2...2.1.3) (2021-06-08)
 
 
