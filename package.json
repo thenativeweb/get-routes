@@ -20,7 +20,7 @@
   "types": "build/lib/getRoutes.d.ts",
   "dependencies": {},
   "devDependencies": {
-    "@types/express": "4.17.12",
+    "@types/express": "4.17.13",
     "assertthat": "6.3.5",
     "express": "4.17.1",
     "roboter": "11.7.7",
