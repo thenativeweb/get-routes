@@ -1,3 +1,10 @@
+## [2.1.5](https://github.com/thenativeweb/get-routes/compare/2.1.4...2.1.5) (2021-08-16)
+
+
+### Bug Fixes
+
+* bump path-parse from 1.0.6 to 1.0.7 ([#338](https://github.com/thenativeweb/get-routes/issues/338)) ([dc97fd9](https://github.com/thenativeweb/get-routes/commit/dc97fd97246dc5c0a1d433b0aa61e1dd6eecca63))
+
 ## [2.1.4](https://github.com/thenativeweb/get-routes/compare/2.1.3...2.1.4) (2021-06-10)
 
 
