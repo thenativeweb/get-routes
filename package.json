@@ -16,6 +16,7 @@
       "email": "amin.aghabeiki@gmail.com"
     }
   ],
+  "private": false,
   "main": "build/lib/getRoutes.js",
   "types": "build/lib/getRoutes.d.ts",
   "dependencies": {},
@@ -23,9 +24,10 @@
     "@types/express": "4.17.13",
     "assertthat": "6.3.13",
     "express": "4.17.1",
-    "roboter": "11.7.8",
+    "roboter": "12.1.2",
     "semantic-release-configuration": "2.0.5"
   },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/thenativeweb/get-routes.git"
