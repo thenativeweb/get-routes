@@ -24,7 +24,7 @@
     "@types/express": "4.17.13",
     "assertthat": "6.3.13",
     "express": "4.17.1",
-    "roboter": "12.3.0",
+    "roboter": "12.5.0",
     "semantic-release-configuration": "2.0.5"
   },
   "scripts": {},
