@@ -1,3 +1,10 @@
+## [2.1.6](https://github.com/thenativeweb/get-routes/compare/2.1.5...2.1.6) (2022-03-25)
+
+
+### Bug Fixes
+
+* bump minimist from 1.2.5 to 1.2.6 ([#356](https://github.com/thenativeweb/get-routes/issues/356)) ([e974d13](https://github.com/thenativeweb/get-routes/commit/e974d1355cf4915a5b80e1375e178aaeed7b4853))
+
 ## [2.1.5](https://github.com/thenativeweb/get-routes/compare/2.1.4...2.1.5) (2021-08-16)
 
 
